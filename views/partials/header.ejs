@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <nav>
+        <img src="https://image.shutterstock.com/image-photo/funny-cat-ophthalmologist-appointmet-squinting-260nw-598805597.jpg">
+        
+        <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
+          <a href="/mypage/" <%- title === 'My Page' ? 'class="active"' : '' %>>My Page</a>
+          <a href="/workouts" <%- title === 'Workouts' ? 'class="active"' : '' %>>Workouts</a>
+          <a href="/workouts/create-new" <%- title === 'Create New Workout' ? 'class="active"' : '' %>>Create New Workout</a>
+          <a href="/workouts/log" <%- title === 'Log A Workout' ? 'class="active"' : '' %>>Log A Workout</a>
+          <a href="/logout">LOG OUT</a>
+      </nav>

@@ -6,6 +6,7 @@ var logger = require('morgan');
 //express session
 //passport
 //method override
+var methodOverride = require('method-override');
 
 // process the .env file 
 require('dotenv').config();
@@ -31,6 +32,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //add method override
+app.use(methodOverride('_method'));
 
 //add app.use(session..)
 
