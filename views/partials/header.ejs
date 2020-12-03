@@ -11,9 +11,15 @@
         <img src="https://image.shutterstock.com/image-photo/funny-cat-ophthalmologist-appointmet-squinting-260nw-598805597.jpg">
         
         <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
-          <a href="/mypage/" <%- title === 'My Page' ? 'class="active"' : '' %>>My Page</a>
-          <a href="/workouts" <%- title === 'Workouts' ? 'class="active"' : '' %>>Workouts</a>
-          <a href="/workouts/create-new" <%- title === 'Create New Workout' ? 'class="active"' : '' %>>Create New Workout</a>
-          <a href="/workouts/log" <%- title === 'Log A Workout' ? 'class="active"' : '' %>>Log A Workout</a>
-          <a href="/logout">LOG OUT</a>
-      </nav>
+        <a href="/exercises" <%- title === 'Exercises' ? 'class="active"' : '' %>>EXERCISES</a>
+        <% if (user) { %>
+            <p> Hi, <%=user.name%>!</p>
+            <a href="/my-page/" <%- title === 'My Page' ? 'class="active"' : '' %>>MY PAGE</a>
+            <a href="/exercises/create-new" <%- title === 'Create New Exercise' ? 'class="active"' : '' %>>CREATE NEW EXERCISE</a>
+            <a href="/exercises/log" <%- title === 'Log Exercise' ? 'class="active"' : '' %>>QUICK LOG</a>
+            <a href="/logout">LOG OUT</a>
+        <% } else { %>
+            <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+        <% } %>
+    </nav>
+
