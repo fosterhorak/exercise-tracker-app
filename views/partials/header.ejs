@@ -7,19 +7,16 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-    <nav>
-        <img src="https://image.shutterstock.com/image-photo/funny-cat-ophthalmologist-appointmet-squinting-260nw-598805597.jpg">
-        
-        <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
-        <a href="/exercises" <%- title === 'Exercises' ? 'class="active"' : '' %>>EXERCISES</a>
+    <nav class="nav">
+        <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>><img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCZ7E6cF3YBZ0RhC0N1romq6uFH0zwmpwCmw&usqp=CAU"></a>
+        <a href="/exercises" <%- title === 'Exercises' ? 'class="active"' : '' %>>Exercises</a>
         <% if (user) { %>
-            <p> Hi, <%=user.name%>!</p>
-            <a href="/my-page/" <%- title === 'My Page' ? 'class="active"' : '' %>>MY PAGE</a>
-            <a href="/exercises/create-new" <%- title === 'Create New Exercise' ? 'class="active"' : '' %>>CREATE NEW EXERCISE</a>
-            <a href="/exercises/log" <%- title === 'Log Exercise' ? 'class="active"' : '' %>>QUICK LOG</a>
-            <a href="/logout">LOG OUT</a>
+            <a href="/my-page/" <%- title === 'My Page' ? 'class="active"' : '' %>><%=user.name%>'s Page</a>
+            <a href="/exercises/create-new" <%- title === 'Create New Exercise' ? 'class="active"' : '' %>>New Exercise</a>
+            <a href="/exercises/log" <%- title === 'Log Exercise' ? 'class="active"' : '' %>>Quick Log</a>
+            <a href="/logout">Log Out</a>
         <% } else { %>
-            <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+            <a href="/auth/google" class="login">Log In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
         <% } %>
     </nav>
 

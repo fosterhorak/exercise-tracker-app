@@ -8,9 +8,14 @@ const userSchema = new Schema({
     required: true
   },
   email: String,
-  avatar: String
-  //gender: 
-  //weight:
+  avatar: String, 
+  age: Number, 
+  height: Number, 
+  weight: Number,
+  gender: {
+      type: String,
+      enum: ['Male', 'Female', 'Other', 'n/a']
+  }
 }, {
   timestamps: true
 });

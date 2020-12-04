@@ -18,3 +18,15 @@ a {
 .login img {
   height: 30px;
 }
+
+.logo {
+  height: 50px;
+  border-radius: 10px;
+
+}
+
+.nav {
+  background-color: black;
+  border-radius: 10px;
+  
+}
