@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+    <!-- BASIC EXERCISE INFO -->
+    <h3><strong><%= exercise.name %></strong></h3>
+    <div><strong>Creator: </strong> <%= exercise.creatorName %> // (id#: <%= exercise.creatorId %>)</div>
+    <br>
+    <div><strong>Body Part Worked: </strong> <%= exercise.bodyPart %></div>
+    <br>
+    <div><strong>Description: </strong> <%= exercise.description %></div>
+    <br>
+    <!-- if there's a demo video entered, link it -->
+    <% if (exercise.demo) { %>
+        <div><a href="<%= exercise.demo %>"></a><strong>Demo Video Link</strong></div>
+        <br>
+    <% } %>
+    <!-- show how popular the exercise is -->
+    <div><strong>Number of favorites: </strong> <%= exercise.favoritedBy.length %></div>
+    <br>
+    
+    <!-- USER ACTIONS-->
+    <!-- add a button to favorite/unfavorite the exercise -->
+    <div> Add button to favorite/unfavorite</div> 
+    <br>
+    <!-- add a button to return to the exercise index list -->
+    <div> Add button to return to exercise list</div> 
+    <br>
+    <!-- add a button to edit the exercise -->
+    <div> Add button to edit (if user = creator)</div> 
+    <br>
+
+    <!-- DISPLAY LOGS-->
+    <!-- display all logs for this exercise (create a table)-->
+    <div> Logs: ... to be added below ...</div>
+
+
+</section>
+
+  
+<%- include('../partials/footer') %>

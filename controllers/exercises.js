@@ -1,7 +1,8 @@
 const Exercise = require('../models/exercise');
 
 module.exports = {
-    index, 
+    index,
+    show, 
     new: newExercise, 
     create
 }
@@ -9,6 +10,12 @@ module.exports = {
 function index (req, res) {
     Exercise.find({}, function(err, exercises) {
         res.render('exercises/index', { title: 'All Exercises', exercises});
+    });
+}
+
+function show (req, res) {
+    Exercise.findById(req.params.id, function(err, exercise) {
+        res.render('exercises/show', {exercise, title: 'Exercise Details'});
     });
 }
 

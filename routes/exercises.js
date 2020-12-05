@@ -4,21 +4,24 @@ const exercisesCtrl = require('../controllers/exercises');
 const isLoggedIn = require('../config/auth');
 
 //route for list of all exercises
-// GET /flights 
+// GET /exercises 
 router.get('/', exercisesCtrl.index);
 
 //route for showing a new exercise entry form
-// GET /flights/new
+// GET /exercises/new
 router.get('/new', isLoggedIn, exercisesCtrl.new);
 
 //route for posting a new exercise
-// POST /flights
+// POST /exercises
 router.post('/', exercisesCtrl.create);
 
 
 
+//route for seeing a detailed view of an individual exercise
+// GET /exercises/:id
+router.get('/:id', exercisesCtrl.show);
 
-//router.get('/:id', exercisesCtrl.show);
+
 //router.post('/', isLoggedIn, exercisesCtrl.create);
 
 module.exports = router;

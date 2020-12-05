@@ -6,7 +6,7 @@
       <th>Creator</th>
       <th>Body Part</th>
       <th># Favs</th>
-      <th><!-- detail button -->Detail Btn</th>
+      <th>Details</th>
       <th><!-- fav / defav button -->Fav Btn</th>
     </tr>
   </thead>
@@ -17,7 +17,7 @@
         <td><%= e.creatorName %></td>
         <td><%= e.bodyPart %></td>
         <td><%= e.favoritedBy.length %></td>
-        <td>add det lnk</td>
+        <td><a href="/exercises/<%= e._id %>">See</a></td>
         <td>add fav btn</td>
       </tr>
       <% }); %>
