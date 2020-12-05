@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+<table id="list">
+  <thead>
+    <tr>
+      <th>Exercise</th>
+      <th>Creator</th>
+      <th>Body Part</th>
+      <th># Favs</th>
+      <th><!-- detail button -->Detail Btn</th>
+      <th><!-- fav / defav button -->Fav Btn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% exercises.forEach(function(e) { %>
+      <tr>
+        <td><%= e.name %></td>
+        <td><%= e.creatorName %></td>
+        <td><%= e.bodyPart %></td>
+        <td><%= e.favoritedBy.length %></td>
+        <td>det btn</td>
+        <td>fav btn</td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  
+<%- include('../partials/footer') %>
