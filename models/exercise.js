@@ -34,10 +34,10 @@ const logSchema = new Schema({
 const exerciseSchema = new Schema({
   name: {type: String, required: true},
   creatorId: {type: Schema.Types.ObjectId, ref: 'User'},
-  creatorName: String,
-  description: String,
+  creatorName: {type: String},
+  description: {type: String},
   bodyPart: {type: String, enum: ['Upper Body', 'Lower Body', 'Full Body', 'Other']}, 
-  demo: String,
+  demo: {type: String},
   favoritedBy: [Schema.Types.ObjectId],
   logs: [logSchema]
 }, {

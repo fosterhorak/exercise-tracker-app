@@ -33,3 +33,11 @@ a {
   border-radius: 10px;
   color: white;
 }
+
+.home-page {
+  text-align: center;
+}
+
+.active {
+  color: red;
+}

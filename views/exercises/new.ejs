@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+
+<h2>Input New Exercise Info Below:</h2>
+<form action="/exercises" method="POST">
+  
+    <label>Exercise Name:
+        <input type="text" name="name">
+    </label><br><br> 
+
+    <label>Description/Instruction:
+        <input type="text" name="description">
+    </label><br><br>
+
+    <label>Body Part Worked:
+        <select name="bodyPart">
+            <option value="Upper Body">Upper Body</option>
+            <option value="Lower Body">Lower Body</option>
+            <option value="Full Body">Full Body</option>
+            <option value="Other">Other</option>
+        </select>
+    </label><br><br>
+
+    <label>Link to Demo Video:
+        <input type="text" name="demo">
+        <small>*Optional</small>  
+    </label><br><br>
+
+    <!-- add check box for creator to favorite exercise-->
+
+  <input type="submit" value="Add Exercise">
+</form>
+
+
+  
+<%- include('../partials/footer') %>
