@@ -3,7 +3,10 @@
 <section id="show-page">
     <!-- BASIC EXERCISE INFO -->
     <h3><strong><%= exercise.name %></strong></h3>
-    <div><strong>Creator: </strong> <%= exercise.creatorName %> // (id#: <%= exercise.creatorId %>)</div>
+    <div><strong>Creator: </strong> <img src="<%= exercise.creatorAvatar %>" alt="">
+        <%= exercise.creatorName %> <br>
+        <small></small>(userId#: <%= exercise.creatorId %>)
+    </div>
     <br>
     <div><strong>Body Part Worked: </strong> <%= exercise.bodyPart %></div>
     <br>

@@ -7,7 +7,7 @@ const usersCtrl = require('../controllers/users');
 //   res.send('respond with a resource');
 // });
 
-// go to user page
-router.get('/', usersCtrl.index);
+// go to user's profile page
+router.get('/', usersCtrl.profile);
 
 module.exports = router;

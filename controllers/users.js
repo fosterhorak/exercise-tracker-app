@@ -1,14 +1,13 @@
 const User = require('../models/user');
 
 module.exports = {
-    index
+    profile
     
 }
 
-function index (req, res) {
-    User.find({}, function(err, user) {
-        res.render('my-page/index', { title: `My Page`, user});
-    });
+function profile (req, res) {
+    let user = req.user;
+    res.render('my-page/profile', {user, title: `My Page`});
 }
 
 

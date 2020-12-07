@@ -30,6 +30,8 @@ function create (req, res) {
         exercise.creatorId = req.user._id;
         //creatorName
         exercise.creatorName = req.user.name;
+        //creatorAvatar
+        exercise.creatorAvatar = req.user.avatar;
 
     //add userID to favoritedBy if check box is checked
     exercise.save(function(err) {
