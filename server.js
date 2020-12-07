@@ -7,6 +7,7 @@ var logger = require('morgan');
 var session = require('express-session');
 //passport
 var passport = require('passport');
+
 //method override
 var methodOverride = require('method-override');
 
@@ -23,6 +24,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 //add additonal routers here...
 var exercisesRouter = require('./routes/exercises');
+var userRouter = require('./routes/users');
 
 var app = express();
 
@@ -59,6 +61,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 //add other routers and paths
 app.use('/exercises', exercisesRouter);
+app.use('/my-page', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

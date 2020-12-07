@@ -27,11 +27,14 @@ function create (req, res) {
     const exercise = new Exercise(req.body);
     //set exercise values not shown in the form
         //creatorId
+        exercise.creatorId = req.user._id;
         //creatorName
+        exercise.creatorName = req.user.name;
+
     //add userID to favoritedBy if check box is checked
     exercise.save(function(err) {
         //handle errors
-        //if (err) return res.redirect('/exercises/new');
+        if (err) return res.redirect('/exercises/new');
         
         //check to see what the new exercise looks like
         console.log(exercise);

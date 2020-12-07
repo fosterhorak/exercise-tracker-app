@@ -1,0 +1,38 @@
+<%- include('../partials/header') %>
+
+<section id="my-page">
+    <!-- BASIC USER INFO -->
+    <h3><%= user.avatar %><strong><%= user.name %></strong></h3>
+
+    <!-- EDITABLE USER INFO -->
+    <div><strong>Email: </strong> <%= user.email %> </div>
+    <br>
+    <div><strong>Age: </strong> <%= user.age %> </div>
+    <br>
+    <div><strong>Height (in): </strong> <%= user.height %> </div>
+    <br>
+    <div><strong>Weight (lb): </strong> <%= user.weight %> </div>
+    <br>
+    <div><strong>Gender: </strong> <%= user.gender %> </div>
+    <br>
+
+    <!-- Button to Edit USER INFO -->
+    <button> Edit My Info </button>
+    <br>
+
+
+    <!-- Display Favorite Exercises -->
+    <h4>Favorite exercises:</h2>
+    <p>... list of exercises.. with link to exercise show/detail page</p>
+    <br>
+
+    <!-- Display user's most recent exercise logs -->
+    <h4>My Exercise Log:</h4>
+    <p> - to list logs...</p>
+    <br>
+
+
+</section>
+
+  
+<%- include('../partials/footer') %>
