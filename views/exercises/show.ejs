@@ -2,10 +2,10 @@
 
 <section id="show-page">
     <!-- BASIC EXERCISE INFO -->
-    <h3><strong><%= exercise.name %></strong></h3>
-    <div><strong>Creator: </strong> <img src="<%= exercise.creatorAvatar %>" alt="">
-        <%= exercise.creatorName %> <br>
-        <small></small>(userId#: <%= exercise.creatorId %>)
+    <h1><strong><%= exercise.name %></strong></h1>
+    <div><strong>Creator: </strong>
+        <img class="exercise-creator-avatar" src="<%= exercise.creatorAvatar %>" alt=""><%= exercise.creatorName %> <br>
+        <small>(userId#: <%= exercise.creatorId %>)</small>
     </div>
     <br>
     <div><strong>Body Part Worked: </strong> <%= exercise.bodyPart %></div>

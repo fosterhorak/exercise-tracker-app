@@ -9,7 +9,18 @@ const userSchema = new Schema({
   },
   email: String,
   avatar: String, 
-  age: Number, 
+  birthday: Date,
+  age: {
+      type: Number, 
+      default: function(){
+        // to be coded...
+            //if birthday is undefined --> age = undefined
+            //if birthday is defined --> run fuction that takes bday and returns age in years 
+        let today = new Date();
+        let yrsOld = 20;
+        return yrsOld;
+      }
+  },
   height: Number, 
   weight: Number,
   gender: {

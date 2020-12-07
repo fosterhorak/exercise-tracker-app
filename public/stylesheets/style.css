@@ -25,6 +25,12 @@ a {
 
 }
 
+.exercise-creator-avatar, .user-avatar {
+  height: 50px;
+  border-radius: 10px;
+
+}
+
 .nav {
   display: flex;
   justify-content: space-around;
