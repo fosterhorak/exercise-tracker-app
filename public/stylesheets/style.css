@@ -71,6 +71,7 @@ button {
   background-color: white;
   border-radius: 5px;
   border-color: white;
+  text-align: center;
 }
 
 button:hover {
