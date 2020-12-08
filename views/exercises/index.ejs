@@ -3,11 +3,11 @@
   <thead>
     <tr>
       <th>Exercise</th>
-      <th>Creator</th>
+      <th>Created By</th>
       <th>Body Part</th>
-      <th># Favs</th>
-      <th></th>
-      <th><!-- fav / defav button -->Fav Btn</th>
+      <th>🤍s</th>
+      <th><!-- detail button --></th>
+      <th><!-- fav / defav button --></th>
     </tr>
   </thead>
   <tbody>
@@ -18,13 +18,21 @@
         <td><%= e.bodyPart %></td>
         <td><%= e.favoritedBy.length %></td>
         <td>
-            <button onclick="window.location.href='/exercises/<%= e._id %>'">Detail</button>
+            <button class="detail-btn" onclick="window.location.href='/exercises/<%= e._id %>'">Detail</button>
         </td>
-        <td>add fav btn</td>
-        
+        <td>
+            <!--if (user is on favorite list) show un-favorite button-->
+            <button id="unfav-btn" onclick="">🤍</button>
+            <!--else show favorite button-->
+            <button id="fav-btn" onclick="">❤️</button>
+        </td>
       </tr>
       <% }); %>
     </tbody>
   </table>
+  <br><br>
+  <div class="edit-exercise-btn"><button class="add-exercise-btn" onclick="window.location.href='/exercises/new'">Add an Exercise</button></div>
+
+
   
 <%- include('../partials/footer') %>

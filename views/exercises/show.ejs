@@ -2,40 +2,58 @@
 
 <section id="show-page">
     <!-- BASIC EXERCISE INFO -->
-    <h1><strong><%= exercise.name %></strong></h1>
-    <div><strong>Creator: </strong>
-        <img class="exercise-creator-avatar" src="<%= exercise.creatorAvatar %>" alt=""><%= exercise.creatorName %> <br>
-        <small>(userId#: <%= exercise.creatorId %>)</small>
-    </div>
+        <thead><tr><h1><strong><%= exercise.name %></strong></h1></tr></thead>  
+        <tbody>  
+            <tr>
+                <td><div><strong>Creator: </strong></div></td>
+                <td><div>
+                    <img class="exercise-creator-avatar" src="<%= exercise.creatorAvatar %>" alt=""><%= exercise.creatorName %> <br>
+                    <!--<small>(userId#: <%= exercise.creatorId %>)</small>-->
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div><strong>Body Part Worked: </strong></div></td>
+                <td><div><%= exercise.bodyPart %></div></td>
+              </tr>
+              <tr>
+                <td><div><strong>Description: </strong></div></td>
+                <td><div><%= exercise.description %></div></td>
+              </tr>
+              <tr>
+                <!-- if there's a demo video entered, link it -->
+                <% if (exercise.demo) { %>
+                    <div><a href="<%= exercise.demo %>" target="_blank"><strong>Demo Video Link</strong></a></div>
+                    <br>
+                <% } %>
+              </tr>
+              <tr>
+                <td><div><strong>🤍s: </strong></div></td>
+                <td>
+                    <!-- show how popular the exercise is -->
+                    <div><%= exercise.favoritedBy.length %></div>
+                </td>
+              </tr>
+            </tbody>
+    </table>
     <br>
-    <div><strong>Body Part Worked: </strong> <%= exercise.bodyPart %></div>
-    <br>
-    <div><strong>Description: </strong> <%= exercise.description %></div>
-    <br>
-    <!-- if there's a demo video entered, link it -->
-    <% if (exercise.demo) { %>
-        <div><a href="<%= exercise.demo %>" target="_blank"><strong>Demo Video Link</strong></a></div>
-        <br>
-    <% } %>
-    <!-- show how popular the exercise is -->
-    <div><strong>Number of favorites: </strong> <%= exercise.favoritedBy.length %></div>
     <br>
     
     <!-- USER ACTIONS-->
-    <!-- add a button to favorite/unfavorite the exercise -->
-    <div> Add button to favorite/unfavorite</div> 
-    <br>
-    <!-- add a button to return to the exercise index list -->
-    <div> Add button to return to exercise list</div> 
-    <br>
-    <!-- add a button to edit the exercise ***ONLY if user = creator-->
-    <div>
+    <div class="show-btns"> 
+        <!-- add a button to favorite/unfavorite the exercise -->
+        <button onclick="">Fav / UnFav</button>
+        <!-- add a button to return to the exercise index list -->
+        <button onclick="window.location.href='/exercises'">Back to Exercises</button>
+        <!-- add a button to edit the exercise ***ONLY if user = creator-->
         <button onclick="window.location.href='/exercises/<%= exercise._id %>/edit'">Edit Exercise</button>
-    <br>
+    </div> 
+    <br><br><br>
+
 
     <!-- DISPLAY LOGS-->
     <!-- display all logs for this exercise (create a table)-->
-    <div> Logs: ... to be added below ...</div>
+    <div> Logs: ... to be added below ... </div>
 
 
 </section>
