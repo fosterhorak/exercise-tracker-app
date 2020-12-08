@@ -5,17 +5,18 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <nav class="nav">
-        <a href="/" <%- title === 'My Exercise Tracker' ? 'class="active"' : '' %>><img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCZ7E6cF3YBZ0RhC0N1romq6uFH0zwmpwCmw&usqp=CAU"></a>
-        <a href="/exercises" <%- title === 'All Exercises' ? 'class="active"' : '' %>>Exercises</a>
-        <% if (user) { %>
-            <a href="/my-page/" <%- title === 'My Page' ? 'class="active"' : '' %>>My Page</a>
-            <a href="/exercises/new" <%- title === 'Add Exercise' ? 'class="active"' : '' %>>Add Exercise</a>
-            <p >Hi, <%=user.name%>!</p>
-            <a href="/logout">Log Out</a>
-        <% } else { %>
-            <a href="/auth/google" class="login">Log In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-        <% } %>
-    </nav>
+  <div id="page-wrap">
+      <h1><%= title %></h1>
+      <nav class="nav">
+          <a href="/" <%- title === 'My Exercise Tracker' ? 'class="active"' : '' %>><img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCZ7E6cF3YBZ0RhC0N1romq6uFH0zwmpwCmw&usqp=CAU"></a>
+          <a href="/exercises" <%- title === 'All Exercises' ? 'class="active"' : '' %>>Exercises</a>
+          <% if (user) { %>
+              <a href="/my-page/" <%- title === 'My Page' ? 'class="active"' : '' %>>My Page</a>
+              <a href="/exercises/new" <%- title === 'Add Exercise' ? 'class="active"' : '' %>>Add Exercise</a>
+              <p >Hi, <%=user.name%>!</p>
+              <a href="/logout">Log Out</a>
+          <% } else { %>
+              <a href="/auth/google" class="login">Log In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+          <% } %>
+      </nav>
 

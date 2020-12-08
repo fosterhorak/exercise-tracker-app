@@ -4,7 +4,13 @@ body {
   background-color: #383838;
   color: white;
   font-family: Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0 auto;
   
+}
+
+#page-wrap {
+  width: 800px;
+  margin: 0 auto;
 }
 
 a {
@@ -115,7 +121,7 @@ form *,
 }
 
 table {
-  font-size: 12px;
+  font-size: 16px;
   margin: 0 auto;
 }
 
