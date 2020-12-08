@@ -15,6 +15,8 @@ router.get('/new', isLoggedIn, exercisesCtrl.new);
 // POST /exercises
 router.post('/', exercisesCtrl.create);
 
+// PUT /exercises/:id
+router.put('/:id', exercisesCtrl.update);
 
 //route for editing and existing  exercise
 // GET /exercises/:id/edit

@@ -17,6 +17,7 @@ function index (req, res) {
 
 function show (req, res) {
     Exercise.findById(req.params.id, function(err, exercise) {
+        console.log(exercise);
         res.render('exercises/show', {exercise, title: 'Exercise Details'});
     });
 }
@@ -63,7 +64,7 @@ function update(req, res) {
         {new: true},
         function(err, exercise) {
             if (err || !exercise) return res.redirect('/exercises');
-            res.redirect(`exercises/${exercise._id}`, {title: 'Exercise Details'});
+            res.redirect(`/exercises/${req.params.id}`);
         }
     
     );
