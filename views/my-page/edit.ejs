@@ -1,0 +1,41 @@
+<%- include('../partials/header') %>
+
+<h2>Edit Your Profile Info Info Below:</h2>
+
+<h3><img class="user-avatar" src="<%= user.avatar %>" alt="" ><strong><%= user.name %></strong></h3>
+<div><strong>Email: </strong> <%= user.email %> </div>
+<br>
+
+<form action="/my-page" method="PUT">
+  
+    <label>Birthday:
+        <input type="datetime-local" name="birthday" value="<%= user.birthday %>">
+    </label><br><br> 
+
+    <label>Height (in):
+        <input type="text" name="demo" value="<%= user.height %>">
+        <small>*Must be a Number</small>  
+    </label><br><br>
+
+    <label>Weight (lb):
+        <input type="text" name="demo" value="<%= user.weight %>">
+        <small>*Must be a Number</small>  
+    </label><br><br>
+        
+    <label>Gender:
+        <!-- cannot figure out how to get this to work...-->
+        <select name="gender" selected = "<%= user.gender %>">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+            <option value="n/a">n/a</option>
+        </select>
+    </label><br><br>
+
+  <input type="submit" value="Update Profile">
+  <br><br>
+</form>
+
+
+  
+<%- include('../partials/footer') %>

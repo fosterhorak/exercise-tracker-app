@@ -5,7 +5,8 @@ module.exports = {
     show, 
     new: newExercise, 
     create, 
-    edit
+    edit, 
+    update
 }
 
 function index (req, res) {
@@ -49,11 +50,20 @@ function create (req, res) {
 
 function edit (req, res) {
     Exercise.findById(req.params.id, function(err, exercise) {
-        console.log(exercise);
-        console.log(exercise.creatorId);
-
         //verify exercise is created by user
         if (!exercise.creatorId.equals(req.user._id)) return res.redirect('/exercises');
         res.render('exercises/edit', {exercise, title: "Edit Exercise"});
     });
+}
+
+function update(req, res) {
+    const exercise = Exercise.update(req.params.id, req.body);
+    exercise.save(function(err) {
+        //handle errors
+        if (err) return res.redirect('/exercises/edit');
+        //see what updated exercise looks like
+        console.log(exercise);
+        //redirect to exercise show page
+        res.redirect('/exercises');
+    })
 }

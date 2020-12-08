@@ -1,14 +1,14 @@
 <%- include('../partials/header') %>
 
 <h2>Edit Exercise Info Below:</h2>
-<form action="/exercises" method="POST">
+<form action="/exercises/:id" method="PUT">
   
     <label>Exercise Name:
         <input type="text" name="name" value="<%= exercise.name %>">
     </label><br><br> 
 
     <label>Description/Instruction: <br>
-        <textarea type="text" name="description" value="<%= exercise.description %>" id="" cols="30" rows="10"></textarea>
+        <textarea type="text" name="description" id="" cols="30" rows="10"><%= exercise.description %></textarea>
     </label><br><br>
         
     <label>Body Part Worked:
@@ -29,6 +29,8 @@
     <!-- add check box for creator to favorite exercise-->
 
   <input type="submit" value="Update Exercise">
+  <br><br>
+  <button>Delete Exercise (tbd)</button>
 </form>
 
 

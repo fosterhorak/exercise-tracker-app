@@ -12,4 +12,7 @@ const isLoggedIn = require('../config/auth');
 // go to user's profile page
 router.get('/', isLoggedIn, usersCtrl.profile);
 
+// go to edit user's profile page
+router.get('/edit', isLoggedIn, usersCtrl.edit);
+
 module.exports = router;
