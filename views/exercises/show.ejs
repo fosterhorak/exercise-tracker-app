@@ -41,20 +41,96 @@
     
     <!-- USER ACTIONS-->
     <div class="show-btns"> 
-        <!-- add a button to favorite/unfavorite the exercise -->
-        <button onclick="">Fav / UnFav</button>
         <!-- add a button to return to the exercise index list -->
         <button onclick="window.location.href='/exercises'">Back to Exercises</button>
+        
+        <!-- add a button to favorite/unfavorite the exercise (if user is logged in) -->
+        <% if (user) { %>
+        <button onclick="">Fav / UnFav</button><br><br>
+        <% } %>
+
         <!-- add a button to edit the exercise ***ONLY if user = creator-->
+        <% if (exercise.creatorId === user._id ) { %>    
         <button onclick="window.location.href='/exercises/<%= exercise._id %>/edit'">Edit Exercise</button>
+        <% } %>
     </div> 
     <br><br><br>
 
 
     <!-- DISPLAY LOGS-->
     <!-- display all logs for this exercise (create a table)-->
-    <div> Logs: ... to be added below ... </div>
-
+    <div> </div>
+    <h3>Create a New Exercise Log:</h3>
+    <% if (user) { %>
+      <form id="add-log-form" method="POST" action="/exercises/<%= exercise._id %>/logs">
+        <label>Time & Date:</label>
+        <input type="datetime-local" name="time">
+        <br>
+        <label>Weight Used (lb):</label>
+        <input type="Number" name="weightUsed">
+        <br>
+        <label># Reps:</label>
+        <input type="Number" name="reps">
+        <br>
+        <label># Sets:</label>
+        <input type="Number" name="sets">
+        <br>
+        <label>Rest time between sets (min):</label>
+        <input type="Number" name="restTime">
+        <small>*optional</small>
+        <br>
+        <label>Notes:</label><small>*optional</small><br>
+        <textarea name="notes" id="" cols="30" rows="10"></textarea>
+        <br>
+        <button type="submit">Add Log</button>
+      </form>
+    <% } %>
+    <br><br>
+    <h3>Exercise Logs:</h3>
+    <% if (exercise.logs.length) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Date</th>
+            <th>Weight</th>
+            <th>Reps</th>
+            <th>Sets</th>
+            <th>Work Vol.</th>
+            <th><!--update button--></th>
+            <th><!--delete button--></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% exercises.logs.forEach(function(l) { %>
+            <tr>
+              <td class="log-user"><img src="<%= l.userAvatar %>" alt="Avatar"><%= l.userName %></td>
+              <td><%= l.time %></td>
+              <td><%= l.weigthUsed %></td>
+              <td><%= l.reps %></td>
+              <td><%= l.sets %></td>
+              <td><%= l.workVol %></td>
+              <td>
+                <% if (user && user._id.equals(l.user)) { %>
+                    <form action="/logs/<%= l._id %>?_method=PUT" method="POST">
+                      <button type="submit">X</button>
+                    </form>
+                <% } %>
+              </td>
+              <td>
+                <% if (user && user._id.equals(l.user)) { %>
+                  <form action="/logs/<%= l._id %>?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                  </form>
+                <% } %>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <h5>No Reviews Yet</h5>
+    <% } %>
 
 </section>
 

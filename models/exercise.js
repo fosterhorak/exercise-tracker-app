@@ -22,6 +22,7 @@ const logSchema = new Schema({
   workEff: {
         type: Number,
         default: function() {
+            if(!restTime) return 'n/a';
             return workVol/(restTime*(sets-1));
         }
   }

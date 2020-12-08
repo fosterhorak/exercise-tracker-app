@@ -6,19 +6,19 @@
 <div><strong>Email: </strong> <%= user.email %> </div>
 <br>
 
-<form action="/my-page" method="PUT">
+<form action="/my-page/?_method=PUT" method="POST">
   
     <label>Birthday:
         <input type="datetime-local" name="birthday" value="<%= user.birthday %>">
     </label><br><br> 
 
     <label>Height (in):
-        <input type="text" name="demo" value="<%= user.height %>">
+        <input type="number" name="height" value="<%= user.height %>">
         <small>*Must be a Number</small>  
     </label><br><br>
 
     <label>Weight (lb):
-        <input type="text" name="demo" value="<%= user.weight %>">
+        <input type="number" name="weight" value="<%= user.weight %>">
         <small>*Must be a Number</small>  
     </label><br><br>
         

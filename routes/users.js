@@ -15,4 +15,7 @@ router.get('/', isLoggedIn, usersCtrl.profile);
 // go to edit user's profile page
 router.get('/edit', isLoggedIn, usersCtrl.edit);
 
+// PUT /exercises/:id
+router.put('/', isLoggedIn, usersCtrl.update);
+
 module.exports = router;

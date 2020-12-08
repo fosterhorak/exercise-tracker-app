@@ -78,6 +78,7 @@ button {
   border-radius: 5px;
   border-color: white;
   text-align: center;
+  height: 30px;
 }
 
 button:hover {
@@ -91,6 +92,15 @@ button:hover {
   justify-self: center;
 }
 
+.add-exercise-btn:hover {
+  border-color: rgb(217, 81, 64);
+}
+
+.cancel-btn {
+  background-color: rgb(217, 81, 64);
+  color: white;
+}
+
 .detail-btn {
 
   background-color: rgb(80, 135, 236);
@@ -102,7 +112,13 @@ button:hover {
   background-color: #818181;
 }
 
-.show-btns .edit-exercise-btn{
+.show-btns {
+  display: flex;
+  justify-content: space-evenly;
+  
+
+}
+.edit-exercise-btn{
   display: flex;
   justify-content: center;
 }

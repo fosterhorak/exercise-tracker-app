@@ -66,16 +66,5 @@ function update(req, res) {
             if (err || !exercise) return res.redirect('/exercises');
             res.redirect(`/exercises/${req.params.id}`);
         }
-    
     );
-
-    // const exercise = Exercise.update(req.params.id, req.body);
-    // exercise.save(function(err) {
-    //     //handle errors
-    //     if (err) return res.redirect('/exercises/edit');
-    //     //see what updated exercise looks like
-    //     console.log(exercise);
-    //     //redirect to exercise show page
-    //     res.redirect('/exercises');
-    
 }
