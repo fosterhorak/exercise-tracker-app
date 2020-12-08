@@ -4,7 +4,8 @@ module.exports = {
     index,
     show, 
     new: newExercise, 
-    create
+    create, 
+    edit
 }
 
 function index (req, res) {
@@ -48,5 +49,16 @@ function create (req, res) {
         // Exercise.find({}, function(err, exercises) {
         //     res.render('exercises/index', { title: 'All Exercises', exercises});
         // });
+    });
+}
+
+function edit (req, res) {
+    Exercise.findById(req.params.id, function(err, exercise) {
+        console.log(exercise);
+        console.log(exercise.creatorId);
+
+        //verify exercise is created by user
+        if (!exercise.creatorId.equals(req.user._id)) return res.redirect('/exercises');
+        res.render('exercises/edit', {exercise});
     });
 }

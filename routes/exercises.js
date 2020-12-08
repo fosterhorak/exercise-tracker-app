@@ -16,10 +16,15 @@ router.get('/new', isLoggedIn, exercisesCtrl.new);
 router.post('/', exercisesCtrl.create);
 
 
+//route for editing and existing  exercise
+// GET /exercises/:id/edit
+router.get('/:id/edit', exercisesCtrl.edit);
 
 //route for seeing a detailed view of an individual exercise
 // GET /exercises/:id
 router.get('/:id', exercisesCtrl.show);
+
+
 
 
 //router.post('/', isLoggedIn, exercisesCtrl.create);
