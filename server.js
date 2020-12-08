@@ -24,7 +24,6 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 //add additonal routers here...
 var exercisesRouter = require('./routes/exercises');
-var userRouter = require('./routes/users');
 
 var app = express();
 
@@ -58,10 +57,11 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//app.use('/users', usersRouter); (delete this)
+
 //add other routers and paths
 app.use('/exercises', exercisesRouter);
-app.use('/my-page', userRouter);
+app.use('/my-page', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

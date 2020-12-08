@@ -18,7 +18,7 @@ router.post('/', exercisesCtrl.create);
 
 //route for editing and existing  exercise
 // GET /exercises/:id/edit
-router.get('/:id/edit', exercisesCtrl.edit);
+router.get('/:id/edit', isLoggedIn, exercisesCtrl.edit);
 
 //route for seeing a detailed view of an individual exercise
 // GET /exercises/:id

@@ -1,18 +1,19 @@
 <%- include('../partials/header') %>
 
-<h2>Input New Exercise Info Below:</h2>
+<h2>Edit Exercise Info Below:</h2>
 <form action="/exercises" method="POST">
   
     <label>Exercise Name:
-        <input type="text" name="name">
+        <input type="text" name="name" value="<%= exercise.name %>">
     </label><br><br> 
 
-    <label>Description/Instruction:
-        <input type="text" name="description">
+    <label>Description/Instruction: <br>
+        <textarea type="text" name="description" value="<%= exercise.description %>" id="" cols="30" rows="10"></textarea>
     </label><br><br>
-
+        
     <label>Body Part Worked:
-        <select name="bodyPart">
+        <!-- cannot figure out how to get this to work...-->
+        <select name="bodyPart" selected = "<%= exercise.bodyPart %>">
             <option value="Upper Body">Upper Body</option>
             <option value="Lower Body">Lower Body</option>
             <option value="Full Body">Full Body</option>
@@ -21,13 +22,13 @@
     </label><br><br>
 
     <label>Link to Demo Video:
-        <input type="text" name="demo">
+        <input type="text" name="demo" value="<%= exercise.demo %>">
         <small>*Optional</small>  
     </label><br><br>
 
     <!-- add check box for creator to favorite exercise-->
 
-  <input type="submit" value="Add Exercise">
+  <input type="submit" value="Update Exercise">
 </form>
 
 
