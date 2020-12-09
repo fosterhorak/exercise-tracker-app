@@ -1,3 +1,4 @@
+const exercise = require('../models/exercise');
 const Exercise = require('../models/exercise');
 
 module.exports = { 
@@ -26,8 +27,7 @@ function create (req, res) {
         
         //push the subdoc for the log
         exercise.logs.push(req.body);
-        // console.log('*** printing exercise after push of req.body: ');
-        // console.log(exercise);
+
         //save the exercise
         exercise.save(function(err) {
             if (err) console.log(err);
@@ -36,21 +36,31 @@ function create (req, res) {
     });
 }
 
-function deleteLog (req, res, next) {
-    Exercise.findOne({'logs._id': req.params.id})
-        .then(function(exercise) {
-            //find review subdoc using id method
-            const log = exercise.logs.id(req.params.id);
-            // verify log was created by the logged in user
-            if (!log.userId.equals(req.user._id)) return res.redirect(`/exercises/${exercise._id}`);
-            log.remove();
-            exercise.save().then(function() {
+function deleteLog (req, res) {
+    Exercise.findOne(
+        {'logs._id': req.params.id, 'logs.userId': req.user._id}, 
+        function(err, exercise) {
+            if (!exercise || err) return res.redirect(`/exercises/${exercise._id}`);
+            
+            console.log('***console log: req.params.id')
+            console.log(req.params.id);
+            console.log('***console log: req.user._id')
+            console.log(req.user._id);
+            console.log('***console log: exercise')
+            console.log(exercise);
+            
+            // remove log subdoc
+            exercise.logs.remove(req.params.id);
+            console.log('***console log after "remove": exercise')
+            console.log(exercise);
+
+            //save updated exercise
+            exercise.save(function(err) {
+                if (err) console.log(err);
+                
+                //redirect to exercise show view
                 res.redirect(`/exercises/${exercise._id}`);
-            }).catch(function(err) {
-                //let express display an error
-                return next(err);
             });
-        });
-    
+        }); 
 }
 

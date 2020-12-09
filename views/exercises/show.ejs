@@ -105,7 +105,8 @@
         <tbody>
           <% exercise.logs.forEach(function(l) { %>
             <tr>
-              <td class="log-user"><img src="<%= l.userAvatar %>" alt="Avatar"><%= l.userName %></td>
+              <td class="log-user"><img src="<%= l.userAvatar %>" alt="Avatar"><br>
+                <%= l.userName %></td>
               <td><%= l.time %></td>
               <td><%= l.weightUsed %></td>
               <td><%= l.reps %></td>

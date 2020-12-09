@@ -6,6 +6,7 @@
       <th>Created By</th>
       <th>Body Part</th>
       <th>🤍s</th>
+      <th># Logs</th>
       <th><!-- detail button --></th>
       <th><!-- fav / defav button --></th>
     </tr>
@@ -17,6 +18,7 @@
         <td><%= e.creatorName %></td>
         <td><%= e.bodyPart %></td>
         <td><%= e.favoritedBy.length %></td>
+        <td><%= e.logs.length %></td>
         <td>
             <button class="detail-btn" onclick="window.location.href='/exercises/<%= e._id %>'">Detail</button>
         </td>
