@@ -58,7 +58,6 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', indexRouter);
-//app.use('/users', usersRouter); (delete this)
 
 //add other routers and paths
 app.use('/exercises', exercisesRouter);

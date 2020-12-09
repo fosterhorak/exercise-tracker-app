@@ -41,18 +41,9 @@ function deleteLog (req, res) {
         {'logs._id': req.params.id, 'logs.userId': req.user._id}, 
         function(err, exercise) {
             if (!exercise || err) return res.redirect(`/exercises/${exercise._id}`);
-            
-            console.log('***console log: req.params.id')
-            console.log(req.params.id);
-            console.log('***console log: req.user._id')
-            console.log(req.user._id);
-            console.log('***console log: exercise')
-            console.log(exercise);
-            
+                     
             // remove log subdoc
             exercise.logs.remove(req.params.id);
-            console.log('***console log after "remove": exercise')
-            console.log(exercise);
 
             //save updated exercise
             exercise.save(function(err) {

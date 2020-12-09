@@ -23,10 +23,13 @@
             <button class="detail-btn" onclick="window.location.href='/exercises/<%= e._id %>'">Detail</button>
         </td>
         <td>
-            <!--if (user is on favorite list) show as favorited button-->
+
+            <!-- ice box: allow user to favorite/defavorite exercise from index view -->
+            
+            <!--if (user is on favorite list) show as favorited (button action = defavorite)-->
             <!-- <button id="fav-btn" onclick="">❤️</button> -->
             
-            <!--else show unfavorited button-->
+            <!--else show as unfavorited (button action = favorite)-->
             <button id="unfav-btn" onclick="">🤍</button>
 
         </td>

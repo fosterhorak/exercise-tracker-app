@@ -17,7 +17,6 @@ function index (req, res) {
 
 function show (req, res) {
     Exercise.findById(req.params.id, function(err, exercise) {
-        //console.log(exercise);
         res.render('exercises/show', {exercise, title: 'Exercise Details'});
     });
 }
@@ -40,9 +39,6 @@ function create (req, res) {
     exercise.save(function(err) {
         //handle errors
         if (err) return res.redirect('/exercises/new');
-        
-        //check to see what the new exercise looks like
-        //console.log(exercise);
 
         //redirect to exercises index list
         res.redirect('/exercises');

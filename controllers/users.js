@@ -24,6 +24,7 @@ function update(req, res) {
         res.redirect('/my-page/edit');
     };
     let user = req.user;
+    
     //set values from body of form to user 
     user.height = req.body.height;
     user.weight = req.body.weight;

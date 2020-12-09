@@ -28,7 +28,4 @@ router.get('/:id', exercisesCtrl.show);
 
 
 
-
-//router.post('/', isLoggedIn, exercisesCtrl.create);
-
 module.exports = router;
