@@ -1,12 +1,13 @@
 # EXERCISE-TRACKER APP
-This application keeps helps users keep track of their exercise habit and track progress over time.
-Users log their exercises, tracking the weight used, rep & set scheem, and even rest times.
+This application helps users keep track of their exercise habit and log progress over time.
+Users log their exercises, tracking the weight used, rep & set scheme, and even rest times.
 Users can choose from a library of exercises created by other users or create their own.
 
 # Screen Shots of Application Use
 
   #### Log-in
 Google OAuth makes for easy sign in and profile set up.
+![Duel](/screenshots/ss3.png)
 
   #### Exercise Library
 Select from the existing library of exercises.
@@ -28,12 +29,13 @@ From the Exercise Detail view, any logged-in user can log a completed exercise.
 # Technologies Used
 This application was made using the following technologies:
 - HTML, CSS, and JavaScript
-- express
-- Atlas & Mongo DB
+- Express
+- Mongo DB & Atlas
 - Mongoose
 - Google OAuth
 
 # Getting Started
+[Link to Trello Board Used for Development](https://trello.com/b/E1EXwrb3/ga-project-2-planning-exercise-tracking)
 [Follow this link to start playing!](https://my-exercise-tracker-app.herokuapp.com/)
 
 # Next Steps
