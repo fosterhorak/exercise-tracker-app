@@ -46,8 +46,8 @@ This application was made using the following technologies:
 - Google OAuth
 
 # Getting Started
-[Link to Trello Board Used for Development](https://trello.com/b/E1EXwrb3/ga-project-2-planning-exercise-tracking)
-[Follow This Link to Use the App!](https://my-exercise-tracker-app.herokuapp.com/)
+- [Link](https://trello.com/b/E1EXwrb3/ga-project-2-planning-exercise-tracking) to Trello Board Used for Development
+- [Follow This Link](https://my-exercise-tracker-app.herokuapp.com/) to Use the App!
 
 # Next Steps
 Plans for future enhancements:
