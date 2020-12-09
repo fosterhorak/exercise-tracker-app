@@ -7,23 +7,34 @@ Users can choose from a library of exercises created by other users or create th
 
   #### Log-in
 Google OAuth makes for easy sign in and profile set up.
-![Duel](/screenshots/ss3.png)
+![login1](/screenshots/log-in-1.png)
+![login2](/screenshots/log-in-2.png)
+
 
   #### Exercise Library
 Select from the existing library of exercises.
+![exerciseLibrary](/screenshots/exercise-library.png)
+
 
   #### Create an Exercise
 Or create your own.
+![createExercise](/screenshots/create-exercise.png)
+
 
   #### Exercise Detail View
 The Exercise Detail view includes descriptions and instruction for how to perform the exercise, and optionally includes a link to a demo video (for visual learners).
+![exerciseDetail](/screenshots/exercise-detail.png)
+
 
   #### User Page
 The user profile page contains basic user profile data.
 The user's age, gender, and body metrics can be updated.
+![userProfile](/screenshots/user-profile.png)
+
 
   #### Logging an Exercise
 From the Exercise Detail view, any logged-in user can log a completed exercise.
+![createLog](/screenshots/create-log.png)
 
 
 # Technologies Used
@@ -36,7 +47,7 @@ This application was made using the following technologies:
 
 # Getting Started
 [Link to Trello Board Used for Development](https://trello.com/b/E1EXwrb3/ga-project-2-planning-exercise-tracking)
-[Follow this link to start playing!](https://my-exercise-tracker-app.herokuapp.com/)
+[Follow This Link to Use the App!](https://my-exercise-tracker-app.herokuapp.com/)
 
 # Next Steps
 Plans for future enhancements:
