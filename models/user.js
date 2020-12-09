@@ -9,7 +9,12 @@ const userSchema = new Schema({
   },
   email: String,
   avatar: String, 
-  birthday: Date,
+  birthday: {
+    type: Date, 
+    default: function () {
+      let bday = new Date();
+      return bday;
+    },
   age: {type: Number, default: 20},
   height: Number, 
   weight: Number,
