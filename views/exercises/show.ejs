@@ -50,7 +50,7 @@
         <% } %>
 
         <!-- add a button to edit the exercise ***ONLY if user = creator-->
-        <% if (exercise.creatorId === user._id ) { %>    
+        <% if (user._id === exercise.creatorId) { %>    
         <button onclick="window.location.href='/exercises/<%= exercise._id %>/edit'">Edit Exercise</button>
         <% } %>
     </div> 
@@ -97,28 +97,22 @@
             <th>Reps</th>
             <th>Sets</th>
             <th>Work Vol.</th>
-            <th><!--update button--></th>
+            <th>Work Eff.</th>
             <th><!--delete button--></th>
           </tr>
         </thead>
         <tbody>
-          <% exercises.logs.forEach(function(l) { %>
+          <% exercise.logs.forEach(function(l) { %>
             <tr>
               <td class="log-user"><img src="<%= l.userAvatar %>" alt="Avatar"><%= l.userName %></td>
               <td><%= l.time %></td>
-              <td><%= l.weigthUsed %></td>
+              <td><%= l.weightUsed %></td>
               <td><%= l.reps %></td>
               <td><%= l.sets %></td>
               <td><%= l.workVol %></td>
+              <td><%= l.workEff %></td>
               <td>
-                <% if (user && user._id.equals(l.user)) { %>
-                    <form action="/logs/<%= l._id %>?_method=PUT" method="POST">
-                      <button type="submit">X</button>
-                    </form>
-                <% } %>
-              </td>
-              <td>
-                <% if (user && user._id.equals(l.user)) { %>
+                <% if (user && user._id.equals(l.userId)) { %>
                   <form action="/logs/<%= l._id %>?_method=DELETE" method="POST">
                     <button type="submit">X</button>
                   </form>

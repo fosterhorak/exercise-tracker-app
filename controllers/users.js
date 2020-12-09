@@ -20,43 +20,39 @@ function edit (req, res) {
 
 function update(req, res) {
     let user = req.user;
-    user.birthday = req.body.birthday;
+    //set values from body of form to user 
     user.height = req.body.height;
     user.weight = req.body.weight;
     user.gender = req.body.gender;
+    user.birthday = req.body.birthday;
+    
+    //age calculation:
+    let bd_month = user.birthday.getMonth();
+    let bd_day = user.birthday.getDate();
+    let bd_yr = user.birthday.getFullYear();
+    user.age = calculate_age(bd_month, bd_day, bd_yr);
+    
+    //save and redirect
     user.save();
     res.redirect('/my-page');
 
-    // User.findOneAndUpdate(
-    //     {_id: req.user.id}, 
-    //     req.body, 
-    //     {new: true},
-    //     function(err, user) {
-    //         if (err || !user) return res.redirect('/');
-    //         res.redirect('/my-page');
-    //     });
 }
 
+function calculate_age(birth_month,birth_day,birth_year)
+{
+    today_date = new Date();
+    today_year = today_date.getFullYear();
+    today_month = today_date.getMonth();
+    today_day = today_date.getDate();
+    age = today_year - birth_year;
 
-// function update(req, res) {
-//     Exercise.findOneAndUpdate(
-//         {_id: req.params.id}, 
-//         req.body,
-//         {new: true},
-//         function(err, exercise) {
-//             if (err || !exercise) return res.redirect('/exercises');
-//             res.redirect(`/exercises/${req.params.id}`);
-//         }
-    
-//     );
-
-    // const exercise = Exercise.update(req.params.id, req.body);
-    // exercise.save(function(err) {
-    //     //handle errors
-    //     if (err) return res.redirect('/exercises/edit');
-    //     //see what updated exercise looks like
-    //     console.log(exercise);
-    //     //redirect to exercise show page
-    //     res.redirect('/exercises');
-    
-// }
+    if ( today_month < (birth_month - 1))
+    {
+        age--;
+    }
+    if (((birth_month - 1) == today_month) && (today_day < birth_day))
+    {
+        age--;
+    }
+    return age;
+}

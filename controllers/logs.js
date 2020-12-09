@@ -10,27 +10,27 @@ module.exports = {
 function create (req, res) {
     //find correct exercise...
     Exercise.findById(req.params.id, function(err, exercise) {
-        console.log('printing exercise when found by id: ');
-        console.log(exercise);
-        console.log('printing req.body before assignments...: ');
-        console.log(req.body);
-        
         //assign all properties not specified in form
         req.body.exerciseName = exercise.name;
         req.body.userId = req.user._id;
         req.body.userName = req.user.name;
         req.body.userAvatar = req.user.avatar;
-        console.log('printing req.body after assignments...: ');
-        console.log(req.body);
+        req.body.workVol = req.body.weightUsed * req.body.reps * req.body.sets;
+        if (req.body.restTime) {
+            let totalWorkingTime = ((req.body.sets - 1)*req.body.restTime)
+            req.body.workEff = (req.body.workVol / totalWorkingTime).toFixed(1);
+        } 
+        if (!req.body.restTime) {
+            req.body.workEff = null;
+        }
         
         //push the subdoc for the log
         exercise.logs.push(req.body);
-        console.log('printing exercise after push of req.body: ');
-        console.log(exercise);
-        console.log('printing exercise.logs after push of req.body: ');
-        console.log(exercise.logs);
+        // console.log('*** printing exercise after push of req.body: ');
+        // console.log(exercise);
         //save the exercise
         exercise.save(function(err) {
+            if (err) console.log(err);
             res.redirect(`/exercises/${exercise._id}`);
         });
     });

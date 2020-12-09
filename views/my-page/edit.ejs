@@ -9,7 +9,8 @@
 <form action="/my-page/?_method=PUT" method="POST">
   
     <label>Birthday:
-        <input type="datetime-local" name="birthday" value="<%= user.birthday %>">
+        <input type="date" name="birthday" 
+            value="<%= user.birthday.getFullYear() %>-<%= user.birthday.getMonth() %>-<%= user.birthday.getDate() %>">    
     </label><br><br> 
 
     <label>Height (in):

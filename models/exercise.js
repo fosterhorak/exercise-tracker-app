@@ -13,19 +13,8 @@ const logSchema = new Schema({
   sets: Number,
   restTime: Number,
   notes: String,
-  workVol: {
-    type: Number,
-    default: function() {
-      return log.weightUsed * log.reps * log.sets;
-    }
-  },
-  workEff: {
-        type: Number,
-        default: function() {
-            if(!restTime) return 'n/a';
-            return workVol/(restTime*(sets-1));
-        }
-  }
+  workVol: {type: Number},
+  workEff: {type: Number}
 }, {
   timestamps: true
 });
