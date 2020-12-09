@@ -14,7 +14,8 @@ const userSchema = new Schema({
     default: function () {
       let bday = new Date();
       return bday;
-    },
+    }
+  },
   age: {type: Number, default: 20},
   height: Number, 
   weight: Number,
