@@ -52,8 +52,8 @@
     <!-- DISPLAY LOGS-->
     <!-- display all logs for this exercise (create a table)-->
     <div> </div>
-    <h3>Create a New Exercise Log:</h3>
     <% if (user) { %>
+      <h3>Create a New Exercise Log:</h3>
       <form id="add-log-form" method="POST" action="/exercises/<%= exercise._id %>/logs">
         <label>Time & Date:</label>
         <input type="datetime-local" name="time">
@@ -76,49 +76,49 @@
         <br>
         <button type="submit">Add Log</button>
       </form>
-    <% } %>
-    <br><br>
-    <h3>Exercise Logs:</h3>
-    <% if (exercise.logs.length) { %>
-      <table>
-        <thead>
-          <tr>
-            <th>User</th>
-            <th>Date</th>
-            <th>Weight</th>
-            <th>Reps</th>
-            <th>Sets</th>
-            <th>Work Vol.</th>
-            <th>Work Eff.</th>
-            <th><!--column for delete button--></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% exercise.logs.forEach(function(l) { %>
+    
+      <br><br>
+      <h3>Exercise Logs:</h3>
+      <% if (exercise.logs.length) { %>
+        <table>
+          <thead>
             <tr>
-              <td class="log-user"><img src="<%= l.userAvatar %>" alt="Avatar"><br>
-                <%= l.userName %></td>
-              <td><%= l.time %></td>
-              <td><%= l.weightUsed %></td>
-              <td><%= l.reps %></td>
-              <td><%= l.sets %></td>
-              <td><%= l.workVol %></td>
-              <td><%= l.workEff %></td>
-              <td>
-                <% if (user && user._id.equals(l.userId)) { %>
-                  <form action="/logs/<%= l._id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                  </form>
-                <% } %>
-              </td>
+              <th>User</th>
+              <th>Date</th>
+              <th>Weight</th>
+              <th>Reps</th>
+              <th>Sets</th>
+              <th>Work Vol.</th>
+              <th>Work Eff.</th>
+              <th><!--column for delete button--></th>
             </tr>
-          <% }); %>
-        </tbody>
-      </table>
-    <% } else { %>
-      <h5>No Reviews Yet</h5>
+          </thead>
+          <tbody>
+            <% exercise.logs.forEach(function(l) { %>
+              <tr>
+                <td class="log-user"><img src="<%= l.userAvatar %>" alt="Avatar"><br>
+                  <%= l.userName %></td>
+                <td><%= l.time %></td>
+                <td><%= l.weightUsed %></td>
+                <td><%= l.reps %></td>
+                <td><%= l.sets %></td>
+                <td><%= l.workVol %></td>
+                <td><%= l.workEff %></td>
+                <td>
+                  <% if (user && user._id.equals(l.userId)) { %>
+                    <form action="/logs/<%= l._id %>?_method=DELETE" method="POST">
+                      <button type="submit">X</button>
+                    </form>
+                  <% } %>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <h5>No Reviews Yet</h5>
+      <% } %>
     <% } %>
-
 </section>
 
   
