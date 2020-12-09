@@ -41,9 +41,11 @@ From the Exercise Detail view, any logged-in user can log a completed exercise.
 This application was made using the following technologies:
 - HTML, CSS, and JavaScript
 - Express
+- Node.js
 - Mongo DB & Atlas
 - Mongoose
 - Google OAuth
+- Heroku
 
 # Getting Started
 - [Link](https://trello.com/b/E1EXwrb3/ga-project-2-planning-exercise-tracking) to Trello Board Used for Development
