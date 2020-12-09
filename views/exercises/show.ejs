@@ -50,8 +50,9 @@
         <% } %>
 
         <!-- add a button to edit the exercise ***ONLY if user = creator-->
-        <% if (user._id === exercise.creatorId) { %>    
+          
         <button onclick="window.location.href='/exercises/<%= exercise._id %>/edit'">Edit Exercise</button>
+        <% if (user._id === exercise.creatorId) { %>  
         <% } %>
     </div> 
     <br><br><br>
