@@ -7,8 +7,8 @@ Users can choose from a library of exercises created by other users or create th
 
   #### Log-in
 Google OAuth makes for easy sign in and profile set up.
-![login1](/screenshots/log-in-1.png)
-![login2](/screenshots/log-in-2.png)
+- ![login1](/screenshots/log-in-1.png)
+- ![login2](/screenshots/log-in-2.png)
 
 
   #### Exercise Library
