@@ -19,7 +19,6 @@ const logSchema = new Schema({
   timestamps: true
 });
 
-
 //exercise schema (with log schema embedded)
 const exerciseSchema = new Schema({
   name: {type: String, required: true},

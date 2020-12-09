@@ -5,7 +5,6 @@ module.exports = {
     profile, 
     edit, 
     update
-    
 }
 
 function profile (req, res) {

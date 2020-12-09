@@ -4,8 +4,6 @@ const Exercise = require('../models/exercise');
 module.exports = { 
     create, 
     delete: deleteLog 
-    //edit, 
-    //update,
 }
 
 function create (req, res) {
