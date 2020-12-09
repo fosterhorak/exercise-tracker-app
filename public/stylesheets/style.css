@@ -107,16 +107,55 @@ button:hover {
   border-color: rgb(80, 135, 236);
   color: white;
 }
+.edit-btn {
+  background-color: rgb(242, 189, 66);
+}
 
 #fav-btn, #unfav-btn {
   background-color: #818181;
 }
+.demo-link a {
+  color: rgb(80, 135, 236);
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
 
+.profile-row {
+  display: flex;
+  flex-direction: row;
+  padding: 1px;
+}
+
+.left {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px;
+  align-items: center;
+}
+
+.p-left {
+  width: 15%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 14px;
+  align-items: center;
+}
+
+.right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  
+
+}
 .show-btns {
   display: flex;
   justify-content: space-evenly;
-  
-
+  width: 70%;
 }
 .edit-exercise-btn{
   display: flex;
@@ -134,6 +173,16 @@ form *,
   grid-column: span 2;
   width: 10rem;
   margin-right: 0 auto;
+}
+
+.home-page-table td{
+  font-size: 14px;
+  padding: 5px;
+}
+
+.home-page-table td{
+  font-size: 14px;
+  padding: 5px;
 }
 
 table {

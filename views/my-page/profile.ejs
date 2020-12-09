@@ -2,34 +2,51 @@
 
 <section id="my-page">
     <!-- BASIC USER INFO -->
-    
-    
-    <h3><img class="user-avatar" src="<%= user.avatar %>" alt="" ><strong><%= user.name %></strong></h3>
-    <div><strong>Email: </strong> <%= user.email %> </div>
-    <br>
+    <div class="profile-row">
+        <div class="p-left"><img class="user-avatar" src="<%= user.avatar %>" alt="" ></div>
+        <div class="right"><h3><strong><%= user.name %></strong></h3></div>
+    </div>
+    <div class="profile-row">
+        <div class="p-left"><strong>Email: </strong></div>
+        <div class="right"><strong><%= user.email %></strong> </div>
+    </div>
+        
     <!-- EDITABLE USER INFO -->
-    <div><strong>Age: </strong> <%= user.age %> </div>
-    <br>
-    <div><strong>Height (in): </strong> <%= user.height %> </div>
-    <br>
-    <div><strong>Weight (lb): </strong> <%= user.weight %> </div>
-    <br>
-    <div><strong>Gender: </strong> <%= user.gender %> </div>
-    <br>
-
-    <!-- Button to Edit USER INFO -->
-    <button onclick="window.location.href='/my-page/edit'">Update My Info</button>
-    <br>
+    <div class="profile-row">
+        <div class="p-left"><strong>Age: </strong></div>
+        <div class="right"><strong><%= user.age %></strong></div>
+    </div>
+    <div class="profile-row">
+        <div class="p-left"><strong>Height (in): </strong></div>
+        <div class="right"><strong><%= user.height %></strong></div>
+    </div>
+    <div class="profile-row">
+        <div class="p-left"><strong>Weight (lb): </strong></div>
+        <div class="right"><strong><%= user.weight %></strong></div>
+    </div>
+    <div class="profile-row">
+        <div class="p-left"><strong>Gender: </strong></div>
+        <div class="right"><strong><%= user.gender %></strong></div>
+    </div>  
+    <div class="profile-row">
+        <div class="p-left"></div>
+        <div class="right">
+            <!-- Button to Edit USER INFO -->
+            <button class="edit-btn" onclick="window.location.href='/my-page/edit'">Update My Info</button>
+            <br><br><br>
+        </div>
+    </div>  
+    
 
 
     <!-- Display Favorite Exercises -->
     <h4>Favorite Exercises:</h2>
-    <p>... list of exercises.. with link to exercise show/detail page</p>
+    <p>Coming soon...</p>
     <br>
 
     <!-- Display user's most recent exercise logs -->
     <h4>My Exercise Log:</h4>
-    <p> - to list logs...</p>
+    <p>Coming soon...</p>
     <br>
 
 

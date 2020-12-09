@@ -2,10 +2,10 @@
 
 <h2>Edit Exercise Info Below:</h2>
 <form action="/exercises/<%= exercise._id %>?_method=PUT" method="POST">
-  
+    
     <label>Exercise Name:
         <input type="text" name="name" value="<%= exercise.name %>">
-    </label><br><br> 
+    </label><br><br>
 
     <label>Description/Instruction: <br>
         <textarea type="text" name="description" id="" cols="30" rows="10"><%= exercise.description %></textarea>
@@ -26,10 +26,8 @@
         <small>*Optional</small>  
     </label><br><br>
 
-    <!-- add check box for creator to favorite exercise-->
-
-  <input type="submit" value="Update Exercise">
-  <br><br>git
+  <input class="add-exercise-btn" type="submit" value="Update Exercise">
+  <br><br>
 </form>
 
 

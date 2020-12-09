@@ -23,10 +23,12 @@
             <button class="detail-btn" onclick="window.location.href='/exercises/<%= e._id %>'">Detail</button>
         </td>
         <td>
-            <!--if (user is on favorite list) show un-favorite button-->
+            <!--if (user is on favorite list) show as favorited button-->
+            <!-- <button id="fav-btn" onclick="">❤️</button> -->
+            
+            <!--else show unfavorited button-->
             <button id="unfav-btn" onclick="">🤍</button>
-            <!--else show favorite button-->
-            <button id="fav-btn" onclick="">❤️</button>
+
         </td>
       </tr>
       <% }); %>

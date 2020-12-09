@@ -19,6 +19,10 @@ function edit (req, res) {
 }
 
 function update(req, res) {
+    if (!req.body.birthday) {
+        alert('must enter birthday');
+        res.redirect('/my-page/edit');
+    };
     let user = req.user;
     //set values from body of form to user 
     user.height = req.body.height;

@@ -2,9 +2,44 @@
  
 <div class="home-page">
   <br><br>
-  <p>Welcome to <span><strong><%= title %></strong></span>!</p>
-  <p>We are currently under construction.</p>
-  <p>Hold tight! Lot's of cool functionality to come.</p>
+  <% if (!user) { %>
+  <h3>Hi! Welcome to <strong><%= title %></strong>!</h3>
+  <p>We are still under construction, but basic functionality is working.</p>
+  <h3>Please Log In to Use <%= title %>!</h3>
+  
+  <% } else { %>
+  <h3>Hi, <%= user.name %>! </h3>
+  <h3>Welcome to <span><strong><%= title %></strong></span>!</h3>
+  <p>We are still under construction, but basic functionality is working.</p><br>
+    
+    <table class="home-page-table">
+      <thead>
+        <tr><h3>As of today you can:</h3></tr>
+      </thead>
+      <tbody>
+        <p>- Browse a Library of Exercises w/ instructions and demo videos</p>
+        <p>- Create & Update Your Own Exercises</p>
+        <p>- View & Update Your User Profile</p>
+        <p>- Log Your Completed Exercises</p>
+        <p>- Delete Exercise Logs (if needed)</p>
+      </tbody>
+    </table>
+    <br><br>
+    <h3>We are working on additional features to make this app even better! So stay tuned!</h3><br>
+    <table class="home-page-table">
+      <thead>
+        <tr><h3>Features coming soon:</h3></tr>
+      </thead>
+      <tbody>
+        <p>- View your completed exercise logs on your user page</p>
+        <p>- Add exercises to your favorite's list for easy access</p>
+        <p>- Sort logs by: date completed, weight used, work volume, or work efficiency</p>
+        <p>- Filter logs by exercise or bodypart</p>
+        <p>- Demo videos embedded directly into to the exercise details page</p>
+        <p>- A data page to show your exercises metrics over time</p>
+      </tbody>
+    </table>
+<% } %>
 </div>
 
 <%- include('./partials/footer') %>

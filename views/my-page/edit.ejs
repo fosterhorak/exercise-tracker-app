@@ -9,8 +9,9 @@
 <form action="/my-page/?_method=PUT" method="POST">
   
     <label>Birthday:
-        <input type="date" name="birthday" 
-            value="<%= user.birthday.getFullYear() %>-<%= user.birthday.getMonth() %>-<%= user.birthday.getDate() %>">    
+        <input type="date" name="birthday" required    
+        value="<%= user.birthday.getFullYear() %>-<%= user.birthday.getMonth() %>-<%= user.birthday.getDate() %>"> 
+        <!--can't get this^^^ to work either-->   
     </label><br><br> 
 
     <label>Height (in):
